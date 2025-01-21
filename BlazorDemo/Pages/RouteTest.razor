@@ -1,0 +1,9 @@
+﻿@page "/route/{id:int}"
+
+<h3>RouteTest</h3>
+<p>id:t är @id</p>
+
+@code {
+ [Parameter]
+ public int id {get;set;}
+}

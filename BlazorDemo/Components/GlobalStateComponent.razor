@@ -1,0 +1,20 @@
+﻿@inject GlobalStateDemo GlobalState
+
+<h3>Global räknare</h3>
+<h4>Increment by: @IncrementBy </h4>
+<button @onclick="IncrementCount">Click to increment</button>
+<p>Value: @counterValue</p>
+
+@code {
+[Parameter]
+public int IncrementBy {get;set;}
+private int counterValue => GlobalState.Counter;
+
+protected override void OnInitialized() {
+  GlobalState.OnChange += StateHasChanged;
+}
+
+private void IncrementCount(){
+  GlobalState.Increment(IncrementBy);
+}
+}

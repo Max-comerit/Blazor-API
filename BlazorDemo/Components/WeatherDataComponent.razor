@@ -1,0 +1,66 @@
+﻿@inject ApiService ApiService
+@inject HttpClient Http
+
+<h3>WeatherDataComponent</h3>
+<div>
+    <input @bind="city" placeholder="Enter city name" />
+    <button @onclick="GetWeather">Get Weather</button>
+</div>
+@if (weatherData == null && string.IsNullOrEmpty(errorMessage))
+{
+    <p>No data yet. Please enter a city and press "Get Weather".</p>
+}
+else if (weatherData != null)
+{
+    <div>
+        <img src="@($"http://openweathermap.org/img/wn/{weatherData.Weather[0].Icon}@2x.png")" alt="Weather Icon" />
+        <p>Temperature: @weatherData.Main.Temp °C</p>
+        <p>Feels Like: @weatherData.Main.FeelsLike °C</p>
+        <p>Weather: @weatherData.Weather[0].Description</p>
+        <p>Humidity: @weatherData.Main.Humidity%</p>
+        <p>Wind Speed: @weatherData.Wind.Speed m/s</p>
+    </div>
+}
+
+@code {
+public WeatherData? weatherData; 
+public string city;
+public string? errorMessage;
+
+public async Task GetWeather () {
+        // Här nollställer vi felmeddelanden och väderdata varje gång vi trycker på hämta väder
+        errorMessage = null;
+        weatherData = null;
+
+        //Här kontrollerar vi så att namnet på staden inte innehåller tomrum
+        if (string.IsNullOrWhiteSpace(city))
+        {
+            errorMessage = "Please enter a city name.";
+            return;
+        }
+
+        //Hämtar nyckeln med hjälp av API-service
+        string apiKey = ApiService.GetApiKey();
+
+        //Sätter ihop URL så att vi skickar med all nödvändig info
+        string url = $"https://api.openweathermap.org/data/2.5/weather?q=Stockholm&appid=0e5b821571552414c8e78b9d0bdc795e&units=metric";
+
+
+        //Sen använder vi trycatch för att få lite tydligare felmeddelanden
+        try
+        {
+            weatherData = await Http.GetFromJsonAsync<WeatherData>(url);
+        }
+
+        //Inbyggda klasser som Exception och HttpRequestExceptions innehåller information om fel
+        catch (HttpRequestException ex)
+        {
+            errorMessage = "Network error.";
+        }
+        catch (Exception ex)
+        {
+            // Övriga fel
+            errorMessage = $"An unexpected error occurred: {ex.Message}";
+        }
+}
+}

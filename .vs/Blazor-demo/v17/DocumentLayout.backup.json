@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Repon\\OPF_R - Newton\\Demo\\Blazor-demo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{606E5CCA-1893-4E76-81B0-A6713BE866D6}|Blazor-demo\\Blazor-demo.csproj|c:\\repon\\opf_r - newton\\demo\\blazor-demo\\blazor-demo\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{606E5CCA-1893-4E76-81B0-A6713BE866D6}|Blazor-demo\\Blazor-demo.csproj|solutionrelative:blazor-demo\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{606E5CCA-1893-4E76-81B0-A6713BE866D6}|Blazor-demo\\Blazor-demo.csproj|c:\\repon\\opf_r - newton\\demo\\blazor-demo\\blazor-demo\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{606E5CCA-1893-4E76-81B0-A6713BE866D6}|Blazor-demo\\Blazor-demo.csproj|solutionrelative:blazor-demo\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Repon\\OPF_R - Newton\\Demo\\Blazor-demo\\Blazor-demo\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "Blazor-demo\\wwwroot\\index.html",
+              "ToolTip": "C:\\Repon\\OPF_R - Newton\\Demo\\Blazor-demo\\Blazor-demo\\wwwroot\\index.html",
+              "RelativeToolTip": "Blazor-demo\\wwwroot\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-01-17T10:14:34.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Repon\\OPF_R - Newton\\Demo\\Blazor-demo\\Blazor-demo\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Blazor-demo\\Pages\\Home.razor",
+              "ToolTip": "C:\\Repon\\OPF_R - Newton\\Demo\\Blazor-demo\\Blazor-demo\\Pages\\Home.razor",
+              "RelativeToolTip": "Blazor-demo\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-15T12:45:06.215Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

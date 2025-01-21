@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Repon\\OPF_R - Newton\\Demo\\Blazor-demo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B28AC54D-1793-4502-B35B-51907168F8BB}|BlazorDemo\\BlazorDemo.csproj|c:\\repon\\opf_r - newton\\demo\\blazor-demo\\blazordemo\\components\\weatherdatacomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B28AC54D-1793-4502-B35B-51907168F8BB}|BlazorDemo\\BlazorDemo.csproj|solutionrelative:blazordemo\\components\\weatherdatacomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeatherDataComponent.razor",
+              "DocumentMoniker": "C:\\Repon\\OPF_R - Newton\\Demo\\Blazor-demo\\BlazorDemo\\Components\\WeatherDataComponent.razor",
+              "RelativeDocumentMoniker": "BlazorDemo\\Components\\WeatherDataComponent.razor",
+              "ToolTip": "C:\\Repon\\OPF_R - Newton\\Demo\\Blazor-demo\\BlazorDemo\\Components\\WeatherDataComponent.razor",
+              "RelativeToolTip": "BlazorDemo\\Components\\WeatherDataComponent.razor",
+              "ViewState": "AgIAABkAAAAAAAAAAAAowB0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-21T14:10:52.018Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

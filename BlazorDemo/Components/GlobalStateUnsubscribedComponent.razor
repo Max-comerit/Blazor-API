@@ -1,0 +1,26 @@
+﻿@inject GlobalStateDemo GlobalState
+
+<h3>Global räknare</h3>
+<p>Value: @counterValue</p>
+
+@code {
+
+private int counterValue => GlobalState.Counter;
+
+@* protected override void OnInitialized() {
+  GlobalState.OnChange += StateHasChanged;
+} *@
+
+protected override void OnAfterRender(bool firstRender) {
+
+if(firstRender)
+{
+  Console.WriteLine("Komponenten har renderat för första gången");
+} else {
+    Console.WriteLine("Komponenten har renderat igen");
+}
+}
+
+}
+
+

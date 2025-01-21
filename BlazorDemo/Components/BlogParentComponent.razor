@@ -1,0 +1,61 @@
+﻿<button class="btn btn-info" @onclick="ToggleBlogs">Click here to toggle blogs</button>
+
+@if(showBlogs) {
+  foreach (Blog blog in blogs) {
+        if(!blog.IsFavourite) {
+          <CascadingValue Value="blog">
+            <BlogChildComponent OnFavouriteToggle="StateHasChanged"/>
+          </CascadingValue>
+      }
+    }
+}
+
+<button class="btn btn-info" @onclick="ToggleFavouriteBlogs">Click here to toggle favourite blogs</button>
+
+@if(showFavouriteBlogs) {
+  foreach (Blog blog in blogs) {
+    if(blog.IsFavourite) {
+          <CascadingValue Value="blog">
+            <BlogChildComponent OnFavouriteToggle="StateHasChanged"/>
+          </CascadingValue>    
+      }
+  }
+}
+
+
+@code {
+private bool showBlogs = false;
+private bool showFavouriteBlogs = false;
+
+
+protected override async Task OnInitializedAsync() {
+  Console.WriteLine("Onintialized har körts");
+}
+
+protected override void OnAfterRender(bool firstRender) {
+
+if(firstRender)
+{
+  Console.WriteLine("Komponenten har renderat för första gången");
+} else {
+    Console.WriteLine("Komponenten har renderat igen");
+}
+}
+
+
+public void ToggleFavouriteBlogs() {
+  showFavouriteBlogs = !showFavouriteBlogs;
+}
+public void ToggleBlogs() {
+  showBlogs = !showBlogs;
+}
+
+List<Blog> blogs = new List<Blog> 
+  {
+    new Blog {Title = "AI", DateTime = new DateTime(2024,1,15), Content="Här diskuterar vi AI, jättebro", IsFavourite=false},
+    new Blog {Title = "Github", DateTime = new DateTime(2024,10,25), Content="Github är i fokus", IsFavourite=false},
+    new Blog {Title = "Blazor", DateTime = new DateTime(2022,1,5), Content="Blazor!!", IsFavourite=false},
+    new Blog {Title = "Remote-work", DateTime = new DateTime(2023,6,15), Content="Remote work content", IsFavourite=false}
+ 
+  };
+} 

@@ -1,0 +1,31 @@
+﻿<div class="card" style="margin: 1rem;">
+  <div class="card-header">
+    @ChildBlog.Title 
+    <svg style="cursor: pointer;" @onclick="ToggleFavourite" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9 21h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2c0-1.1-.9-2-2-2h-6.31l.95-4.57l.03-.32c0-.41-.17-.79-.44-1.06L14.17 1L7.58 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2M9 9l4.34-4.34L12 10h9v2l-3 7H9zM1 9h4v12H1z"/></svg>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>@ChildBlog.Content</p>
+      <footer class="blockquote-footer">@ChildBlog.DateTime </footer>
+      @if(ChildBlog.IsFavourite)
+      {
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#c81f1f" d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"/></svg>      }
+    </blockquote>
+  </div>
+</div>
+
+@code {
+[CascadingParameter]
+public Blog? ChildBlog {get;set;}
+
+protected override void OnParametersSet() {
+  Console.WriteLine("Barnkomponenten har tilldelats en parameter");
+}
+
+[Parameter]
+public EventCallback OnFavouriteToggle {get;set;}
+public async void ToggleFavourite() {
+  ChildBlog.IsFavourite = !ChildBlog.IsFavourite;
+  await OnFavouriteToggle.InvokeAsync();
+}
+}
